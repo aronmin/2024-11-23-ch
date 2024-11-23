@@ -1,10 +1,7 @@
 package com.ll.ch.doamin.chat.chatRoom.controller;
 
 import com.ll.ch.doamin.chat.chatRoom.entity.ChatRoom;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -12,7 +9,10 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController // 외부에서 오는 http와 상호작용 가능
-@RequestMapping("/api/vq/chat/rooms")
+@RequestMapping("/api/v1/chat/rooms")
+@CrossOrigin(
+        origins = "https://cdpn.io"
+)
 public class ApiV1ChatRoomControllers {
     private final List<ChatRoom> chatRooms = new ArrayList<>(){{
         add(
